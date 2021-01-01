@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django_part_two</title>
+    <link rel="stylesheet" href=" {% static "css/styles.css" %} ">
+</head>
+<body>
+    <h1>Django level 2</h1>
+    <h2>Access Records</h2>
+
+    <div>
+        {% if access_records %}
+        
+        <table>
+            <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+            </thead>
+
+            {% for a in access_records %}
+            <tr>
+                <td>{{ a.name }}</td>
+                <td>{{ a.date }}</td>
+            </tr>
+
+            {% endfor %}
+        </table>
+
+        {% else %}
+
+        <p>No Access Reocrds Found</p>
+
+        {% endif %}
+    </div>
+    
+</body>
+</html>
