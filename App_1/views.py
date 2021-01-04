@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from App_1.models import Topic, Webpage, AccessRecord
 from . import forms
+from App_1.forms import Form_2
 
 # Create your views here.
 # def index(request):
@@ -37,3 +38,13 @@ def knowledge_view(request):
     # return render (request, 'App_1/form_page.html', {'form':form})
 
 
+def for_user_view(request):
+    form = Form_2()
+
+    if request.method == 'POST':
+        form = Form_2(request.POST)
+
+        if form.is_valid():
+            form.save(commit=True)
+
+    return render(request, 'App_1/for_user.html', {'form':form})

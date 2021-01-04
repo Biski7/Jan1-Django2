@@ -21,4 +21,12 @@ class AccessRecord(models.Model):
 
     def __str__(self):
         return str(self.date)
+
+class for_user(models.Model):
+    name = models.CharField(max_length=264, unique =False)
+    job = models.CharField(max_length=264)
+
+    def __str__(self):
+        return str(self.name + ' has job: ' + self.job)
+    
     

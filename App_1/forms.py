@@ -1,5 +1,6 @@
 from django import forms
 from django.core import validators
+from App_1.models import for_user
 
 # MAKING OWN CUSTOM VALIDATION
 def check_for_a(value):
@@ -16,7 +17,8 @@ class Form_1(forms.Form):
     # Cleaning all fields at once
     
     def clean(self):
-        all_clean_data = super().clean()
+        all_clean_data = super().clean() 
+        # returns all data
         email = all_clean_data['email']
         v_email = all_clean_data['verify_email']
         
@@ -25,3 +27,7 @@ class Form_1(forms.Form):
             raise forms.ValidationError('Email did not match')
 
 
+class Form_2(forms.ModelForm):
+    class Meta:
+        model = for_user
+        fields = '__all__'
