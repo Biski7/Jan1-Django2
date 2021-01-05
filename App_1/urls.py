@@ -2,6 +2,8 @@
 from App_1 import views
 from django.urls import path
 
+app_name = 'App_1'
+
 urlpatterns = [
     path("",views.index, name="index"),
     path("keanu/", views.help, name='keanu'),
