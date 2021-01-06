@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div class="container">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="navbar-brand"><a href="{% url 'App_3:index' %}">APP3_Index</a></li>
+                <li class="nav-link"><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li class="nav-link"><a href="{% url 'App_3:register' %}">Register</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block body_block %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
