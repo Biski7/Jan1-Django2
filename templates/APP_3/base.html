@@ -15,6 +15,17 @@
                 <li class="navbar-brand"><a href="{% url 'App_3:index' %}">APP3_Index</a></li>
                 <li class="nav-link"><a href="{% url 'admin:index' %}">Admin</a></li>
                 <li class="nav-link"><a href="{% url 'App_3:register' %}">Register</a></li>
+
+                {% if user.is_authenticated %}
+
+                <li class="nav-link"><a href="{% url 'logout' %}">Logout</a></li>
+
+                {% else %}
+
+                <li class="nav-link"><a href="{% url 'App_3:user_login' %}">Login</a></li>
+
+
+                {% endif %}
             </ul>
 
         </div>

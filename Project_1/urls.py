@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from App_1 import views
+from App_3 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('App_1/', include('App_1.urls')),
     path('App_2/', include('App_2.urls')),
     path('App_3/', include('App_3.urls')),
+    path('logout', views.user_logout, name='logout'),
 ]
